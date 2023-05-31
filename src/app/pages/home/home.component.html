@@ -1,0 +1,42 @@
+<app-header class="web"></app-header>
+<div class="contentHome">
+  <section class="title">
+    <img src="assets/img/logo.svg" alt="logo Blocks" />
+  </section>
+  <section class="subtitle">
+    <h3 class="textCatalogo">Catálogo</h3>
+  </section>
+  <section class="resultados">
+    <div>
+      <p class="textResultados">Resultados</p>
+    </div>
+    <div class="content">
+      <div *ngFor="let item of listCards">
+        <div class="card">
+          <div class="img">
+            <img
+              src="https://plugin-storage.nyc3.digitaloceanspaces.com/families/images/{{
+                item.id
+              }}.jpg"
+            />
+          </div>
+          <div class="cardText">
+            <div class="text">
+              <div>
+                <span>{{ item.details.description }}</span>
+              </div>
+              <div class="separador"></div>
+              <i class="material-icons icon"> arrow_outward </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="next" (click)="nextBlocks()">
+    <span>Next</span>
+    <i class="material-icons"> keyboard_double_arrow_right</i>
+  </div>
+</div>
+<app-footer></app-footer>
+<app-header class="mobile"></app-header>
